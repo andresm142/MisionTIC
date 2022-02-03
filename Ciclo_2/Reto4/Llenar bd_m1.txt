@@ -1,0 +1,45 @@
+ // CODIGO PARA PRUEBA Y LLENADO DE MATRIZ INICIAL
+    public void inicial() throws SQLException{
+        //matriz=Nombre,genero,materia,nota
+        Double[][] matriz1={
+            {1.0, 0.0, 1.0, 8.3},
+            {1.0, 0.0, 2.0, 0.3},
+            {1.0, 0.0, 3.0, 4.2},
+            {2.0, 0.0, 1.0, 7.3},
+            {2.0, 0.0, 2.0, 8.9},
+            {2.0, 0.0, 3.0, 1.5},
+            {3.0, 0.0, 1.0, 5.5},
+            {3.0, 0.0, 2.0, 4.1},
+            {3.0, 0.0, 3.0, 8.1},
+            {4.0, 1.0, 1.0, 4.7},
+            {4.0, 1.0, 2.0, 2.7},
+            {4.0, 1.0, 3.0, 1.8},
+            {5.0, 1.0, 1.0, 10.0},
+            {5.0, 1.0, 2.0, 3.7},
+            {5.0, 1.0, 3.0, 3.3},
+            {6.0, 1.0, 1.0, 0.4},
+            {6.0, 1.0, 2.0, 5.6},
+            {6.0, 1.0, 3.0, 7.2},
+            };
+               
+        connection=objConexion.connect();
+        statement = connection.createStatement();
+        double[]dato=new double[4];
+        for (int x=0; x < matriz1.length; x++) {
+                    
+                    for (int y=0; y < matriz1[x].length; y++) {
+                        dato[y]=matriz1[x][y];
+                        
+                    }
+                    
+                    try {
+                        statement.execute(
+                            "INSERT INTO Alumnos (Nombre, Genero, Materia, Notas ) VALUES ( "+dato[0]+
+                                                ", "+dato[1]+", "+dato[2]+", "+dato[3]+" ) ");
+                       
+                    }catch(SQLException e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+ 
+    }

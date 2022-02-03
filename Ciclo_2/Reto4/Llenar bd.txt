@@ -1,0 +1,47 @@
+  // CODIGO PARA PRUEBA Y LLENADO DE MATRIZ INICIAL
+    public void inicial() throws SQLException{
+        //matriz=Nombre,genero,materia,nota
+        String[][] matriz1={
+        {"armando","m","idiomas","8.3"},
+        {"armando","m","historia","0.3"},
+        {"armando","m","literatura","4.2"},
+        {"nicolas","m","idiomas","7.3"},
+        {"nicolas","m","historia","8.9"},
+        {"nicolas","m","literatura","1.5"},
+        {"daniel","m","idiomas","5.5"},
+        {"daniel","m","historia","4.1"},
+        {"daniel","m","literatura","8.1"},
+        {"maria","f","idiomas","4.7"},
+        {"maria","f","historia","2.7"},
+        {"maria","f","literatura","1.8"},
+        {"marcela","f","idiomas","10.0"},
+        {"marcela","f","historia","3.7"},
+        {"marcela","f","literatura","3.3"},
+        {"alexandra","f","idiomas","0.4"},
+        {"alexandra","f","historia","5.6"},
+        {"alexandra","f","literatura","7.2"}
+        };
+               
+
+        connection=objConexion.connect();
+        statement = connection.createStatement();
+        String []dato=new String[4];
+        for (int x=0; x < matriz1.length; x++) {
+                    
+                    for (int y=0; y < matriz1[x].length; y++) {
+                        dato[y]=matriz1[x][y];
+                        
+                    }
+                    
+                    try {
+                        statement.execute(
+                            "INSERT INTO Alumnos (Nombre, Genero, Materia, Notas ) VALUES ( '"+dato[0]+
+                                                "', '"+dato[1]+"', '"+dato[2]+"', '"+dato[3]+"' ) ");
+                       
+                    }catch(SQLException e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+ 
+    }
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>60</y>
+      <w>220</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>GradingSystem
+--
+# cantNotas: int
+# contSobresaliente: int
+# estudiantes: ArrayList&lt;Student&gt;
+--
++ stat1(): double
++ stat2(): double
++ stat3(): String
++ stat4(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>310</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>SchoolGradingSystem
+--
+
+--
++ loadData(int, String): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>240</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>60</y>
+      <w>240</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Student
+--
+- nombre: float
+- genero: float
+- notas: HashMap&lt;Float,Float&gt; 
+--
++ Student(float, float, String)
++ getNombre(): float
++ getGenero(): float
++ getNotas(): HashMap&lt;Float,Float&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>50</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+</diagram>
